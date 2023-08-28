@@ -1,20 +1,50 @@
-use std::net::SocketAddr;
-
-use axum::response::Html;
-use axum::Router;
+use axum::{
+    response::Html,
+    routing::get,
+    Router,
+};
 
 #[tokio::main]
 async fn main() {
-    let routes_hello = Router::new().route(
-        "/", get(hello)
+    let app = Router::new()
+        .route("/", get(home))
+        .route("/api", get(api)
     );
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    println!("LISTENING on {addr}\n");
-    axum::Server::bind(&addr)
-        .serve(routes_hello.into_make_service())
+    axum::Server::bind(&"0.0.0.0:3000".parse().unwrap())
+        .serve(app.into_make_service())
+        .await
+        .unwrap();
+}
+// HTML
+async fn home() -> Html<String> {
+    Html(format!("
+        <html>
+            <head>
+                <style src='/htmx-1.9.5.min.js'></style>
+                <style>
+                    .fade-me-out.htmx-swapping {{
+                        opacity: 0;
+                        transition: opacity 1s ease-out;
+                    }}
+               </style> 
+            </head>
+            <h3>Homepage</h3>
+            <button class='fade-me-out' hx-swap='outerHTML swap:1s'>Please Work</button>
+
+        </html>
+    "))
 }
 
-async fn hello () {
-    Html("Hello")
+
+// API
+async fn api() -> Html<String> {
+    Html(format!("
+        <html>
+            <head>
+                <style src='/htmx-1.9.5.min.js'></style>
+            </head>
+            <div><u>API</u></div>
+        </html>
+    "))
 }
