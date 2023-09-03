@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 8rem;
     background-color: pink;
+    border-radius: 10px;
 }
 .navbar table {
     margin-left: auto;
@@ -42,4 +43,10 @@ body {
     font-size: 3rem;
 }
 
-/* Home */
+/* Main */
+#main div {
+    position: block;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
