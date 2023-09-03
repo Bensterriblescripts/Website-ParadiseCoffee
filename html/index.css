@@ -1,4 +1,9 @@
 /* General */
+@font-face {
+    font-family: alexbrush;
+    src: url(/assets/AlexBrush-Regular.ttf);
+}
+
 * {
     user-select: none;
 }
@@ -6,15 +11,22 @@ body {
     margin: 0;
     padding: 0;
 }
+.main div {
+    position: block;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
 
 /* Navbar */
 .navbar {
     margin-top: 0;
     display: flex;
     width: 100%;
-    height: 8rem;
+    height: 6rem;
     background-color: pink;
     border-radius: 10px;
+    box-shadow: 0px 6px 6px rgb(230, 197, 197);
 }
 .navbar table {
     margin-left: auto;
@@ -27,7 +39,7 @@ body {
     gap: 4rem;
     font-size: 24px;
     color: white;
-    text-shadow: 1px 1px 5px grey;
+    text-shadow: 1px 1px 5px rgb(100, 99, 99);
 }
 .navbar td {
     margin-top: auto;
@@ -39,14 +51,16 @@ body {
 }
 #title {
     transform: scale(1);
-    margin-right: 70rem;
-    font-size: 3rem;
+    margin-right: 66rem;
+    font-size: 4rem;
+    font-family: alexbrush;
+    text-decoration: underline;
 }
 
-/* Main */
-#main div {
-    position: block;
-    margin: auto;
-    text-align: center;
-    width: 50%;
+/* Home */
+.home-b1 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2rem;
 }
