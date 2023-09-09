@@ -56,11 +56,17 @@ body {
     font-family: alexbrush;
     text-decoration: underline;
 }
+.variable_error {
+    color: lightblue;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+}
+.variable {
+    color: lightblue;
+}
+.string {
+    color: rgb(165, 87, 42);
+}
 
 /* Home */
-.home-b1 {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 2rem;
-}
