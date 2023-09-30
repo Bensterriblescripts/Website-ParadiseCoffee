@@ -17,6 +17,9 @@ body {
     text-align: center;
     width: 50%;
 }
+#img-title {
+    margin-right: 0px;
+}
 
 /* Navbar */
 .navbar {
@@ -51,6 +54,7 @@ body {
 }
 #title {
     transform: scale(1);
+    margin-left: -9rem;
     margin-right: 66rem;
     font-size: 4rem;
     font-family: alexbrush;
